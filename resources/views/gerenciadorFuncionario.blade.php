@@ -23,7 +23,14 @@
     </tr>
   </thead>
   <tbody>
+    @if(empty($_GET['nomefun']))
+   
+    @else
+    
     @foreach($dadosfuncionario as $dadosfuncionarios)
+    
+
+    
     <tr>
       <th scope="row">{{$dadosfuncionarios->id}}</th>
       <td>{{$dadosfuncionarios->nomefun}}</td>
@@ -37,4 +44,5 @@
 </table>
 
 </div>
+@endif
 @endsection

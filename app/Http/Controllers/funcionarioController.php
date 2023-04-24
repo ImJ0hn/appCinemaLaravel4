@@ -22,7 +22,7 @@ class funcionarioController extends Controller
             ]
             );
             Funcionario::create($dadosfuncionarios);
-        return Redirect::route('/home');
+        return Redirect::route('home');
     }
 /*
     public function buscarFuncionario(){

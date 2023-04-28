@@ -44,10 +44,32 @@ class funcionarioController extends Controller
         
     }
 
+    public function ApagarFuncionario(Funcionario $registrosFuncionarios){
+    $registrosFuncionarios->delete();
 
+       return Redirect::route('');
+    }
 
+    public function MostrarRegistrosFuncionario(Funcionario $registrosFuncionarios){
+        return view('xxxx',['registrosFuncionarios'=>$registrosFuncionarios]);
 
+    }
 
+    public function AlterarBancoFuncionario(Funcionario  $registrosFuncionarios, Request $request){
+        $dadosfuncionarios = $request->validate([
+            'emailfun'=> 'string|required',
+                'nomefun'=> 'string|required',
+                'senhafun'=> 'string|required',
+                'whatsappfun'=> 'string|required',
+                'cpffun'=> 'string|required'
+        ]);
 
+        $registrosFuncionarios->fill($dadosfuncionarios);
+        $registrosFuncionarios->save();
+
+        return Redirect::route('gerenciar-funcionario');
+    }
+
+    
 
 }

@@ -47,7 +47,7 @@ class funcionarioController extends Controller
     public function ApagarFuncionario(Funcionario $registrosFuncionarios){
     $registrosFuncionarios->delete();
 
-       return Redirect::route('');
+       return Redirect::route('home');
     }
 
     public function MostrarRegistrosFuncionario(Funcionario $registrosFuncionarios){

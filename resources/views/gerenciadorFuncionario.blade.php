@@ -39,11 +39,15 @@
       <th scope="row">{{$dadosfuncionarios->id}}</th>
       <td>{{$dadosfuncionarios->nomefun}}</td>
       <td>{{$dadosfuncionarios->emailfun}}</td>
-      <td><a href="{{route('mostrar-funcionario', $dadosfuncionarios->id)}}">Alterar</td>
+
       <td>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Excluir
-</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterarFun-{{$dadosfuncionarios->id}}">Alterar</button>
+      @include('modal.funcionarioAlterar')
+      </td>
+        
+      <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
+        @include('modal.funcionarioDeletar')
       </td>  
 
     </tr>
@@ -51,27 +55,7 @@
     
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Deseja excluir este funcionário?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <form method="post" action="{{route('apagar-funcionario',$dadosfuncionarios->id)}}">
-  @method('delete')
-  @csrf
-  <button type="submit" class="btn btn-danger" name="excluir">Excluir</button>
-</form>
-      </div>
-    </div>
-  </div>
-</div>
+
    @endforeach
   </tbody>
 </table>

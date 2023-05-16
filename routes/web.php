@@ -28,8 +28,8 @@ Route::put('/gerenciar-filme/{registroFilme}',[filmeController::class,'AlterarBa
 Route::get('/cadastro-funcionario',[funcionarioController::class,'buscarCadastroFuncionario'])->name('buscar-cadastro-funcionario');
 Route::post('/cadastro-funcionario',[funcionarioController::class,'cadastrarFuncionario'])->name('cadastro-funcionario');
 Route::get('/gerenciar-funcionario',[funcionarioController::class,'MostrarGerenciadorFuncionario'])->name('gerenciar-funcionario');
-Route::get('/alterar-funcionario/{resgistroFuncionario}',[funcionarioController::class,'MostrarRegistrosFuncionario'])->name('mostrar-funcionario');
-Route::put('/gerenciar-funcionario/{registroFuncionario}',[funcionarioController::class,'AlterarBancoFuncionario'])->name('alterar-banco-funcionario');
+Route::get('/alterar-funcionario/{registrosFuncionarios}',[funcionarioController::class,'MostrarRegistrosFuncionario'])->name('mostrar-funcionario');
+Route::put('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioController::class,'AlterarBancoFuncionario'])->name('alterar-banco-funcionario');
 
 
 

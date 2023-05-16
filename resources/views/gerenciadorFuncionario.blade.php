@@ -46,7 +46,7 @@
       </td>
         
       <td>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteFun-{{$dadosfuncionarios->id}}">Excluir</button>
         @include('modal.funcionarioDeletar')
       </td>  
 

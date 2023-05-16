@@ -45,7 +45,9 @@
       <td>{{$dadosfilmes->atoresfilme}}</td>
       <td>{{$dadosfilmes->sinopsefilme}}</td>
       <td>{{$dadosfilmes->datalancamentofilme}}</td>
-      <td><a href="{{route('mostrar-filme', $dadosfilmes->id)}}">Alterar</td>
+      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterarFilme-{{$dadosfilmes->id}}">Alterar</button>
+      @include('modal.filmeAlterar')
+      </td>
       <td>
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Excluir

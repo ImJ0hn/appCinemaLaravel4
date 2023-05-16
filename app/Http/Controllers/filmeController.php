@@ -29,7 +29,7 @@ class filmeController extends Controller
         
         Filme::create($dadosfilmes);
 
-        //return Redirect::route('/home');
+        return View('home');
     }
 
     public function MostrarGerenciadorFilme(Request $request){

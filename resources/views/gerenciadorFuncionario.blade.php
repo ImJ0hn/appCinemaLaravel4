@@ -18,6 +18,8 @@
       <th scope="col">Código</th>
       <th scope="col">Nome</th>
       <th scope="col">E-mail</th>
+      <th scope="col">Whatsapp</th>
+      <th scope="col">CPF</th>
       <th scope="col">Alterar</th>
       <th scope="col">Excluir</th>
     </tr>
@@ -39,6 +41,8 @@
       <th scope="row">{{$dadosfuncionarios->id}}</th>
       <td>{{$dadosfuncionarios->nomefun}}</td>
       <td>{{$dadosfuncionarios->emailfun}}</td>
+      <td>{{$dadosfuncionarios->whatsappfun}}</td>
+      <td>{{$dadosfuncionarios->cpffun}}</td>
 
       <td>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterarFun-{{$dadosfuncionarios->id}}">Alterar</button>

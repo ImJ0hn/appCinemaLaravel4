@@ -32,6 +32,9 @@ Route::get('/alterar-funcionario/{registrosFuncionarios}',[funcionarioController
 Route::put('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioController::class,'AlterarBancoFuncionario'])->name('alterar-banco-funcionario');
 
 
+//Poltrona
+Route::post('/cadastro-poltrona',[Poltrona::class,'cadastrarPoltrona'])->name('cadastro-poltrona');
+
 
 Route::delete('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioController::class,'ApagarFuncionario'])->name('apagar-funcionario');
 Route::delete('/gerenciar-filme/{registrosFilmes}', [filmeController::class, 'ApagarFilme'])->name('apagar-filme');

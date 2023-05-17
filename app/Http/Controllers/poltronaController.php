@@ -18,7 +18,7 @@ class poltronaController extends Controller
     public function cadastrarPoltrona(Request $request){
         $dadospoltronas = $request->validate(
             [
-                'numpol'=> 'int|required',
+                'numpol'=> 'string|required',
                 'nomeclie'=> 'string|required'
             ]
             );
@@ -30,10 +30,10 @@ class poltronaController extends Controller
 
     // Tenho que criar a página que irá mostrar as poltronas para isto funcionar.
     public function MostrarGerenciadorPoltrona(Request $request){
-        $dadospoltronas = Funcionario::all();
+        $dadospoltronas = Poltrona::all();
        // dd($dadosfuncionarios);
 
-        $dadospoltronas = Funcionario::query();
+        $dadospoltronas = Poltrona::query();
         $dadospoltronas->when($request->clie,function($query,$nomecliente ){
             $query->where('nomeclie','like','%'.$nomecliente.'%');
         }); 
@@ -71,7 +71,7 @@ class poltronaController extends Controller
         $registrosPoltronas->save();
 
         //Isso terá que ser arrumado depois, quando criar uma route no web.
-        return Redirect::route('gerenciar-funcionario');
+        return Redirect::route('gerenciar-poltrona');
 
 
 }

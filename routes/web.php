@@ -35,8 +35,8 @@ Route::put('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioControll
 //Poltrona
 
 //Chama a View.
-Route::get('/cadastro-poltrona',[poltronaController::class,'buscarCadastroPoltrona'])->name('cadastro-poltrona');
-
+Route::get('/cadastro-poltrona',[poltronaController::class,'buscarCadastroPoltrona'])->name('busca-cadastro-poltrona');
+Route::post('/cadastro-poltrona',[poltronaController::class,'cadastrarPoltrona'])->name('cadastro-poltrona');
 
 Route::delete('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioController::class,'ApagarFuncionario'])->name('apagar-funcionario');
 Route::delete('/gerenciar-filme/{registrosFilmes}', [filmeController::class, 'ApagarFilme'])->name('apagar-filme');

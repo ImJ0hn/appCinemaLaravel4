@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\filmeController;
 use App\Http\Controllers\funcionarioController;
-
+use App\Http\Controllers\poltronaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +33,9 @@ Route::put('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioControll
 
 
 //Poltrona
-Route::post('/cadastro-poltrona',[Poltrona::class,'cadastrarPoltrona'])->name('cadastro-poltrona');
+
+//Chama a View.
+Route::get('/cadastro-poltrona',[poltronaController::class,'buscarCadastroPoltrona'])->name('cadastro-poltrona');
 
 
 Route::delete('/gerenciar-funcionario/{registrosFuncionarios}',[funcionarioController::class,'ApagarFuncionario'])->name('apagar-funcionario');

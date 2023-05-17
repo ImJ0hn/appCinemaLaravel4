@@ -9,6 +9,12 @@ use App\Models\Poltrona;
 class poltronaController extends Controller
 {
 
+    //Necessário para chamar a view.
+    public function buscarCadastroPoltrona(){
+        return View('cadastroPoltrona');
+    }
+    
+
     public function cadastrarPoltrona(Request $request){
         $dadospoltronas = $request->validate(
             [
@@ -16,6 +22,7 @@ class poltronaController extends Controller
                 'nomeclie'=> 'string|required'
             ]
             );
+
         Poltrona::create($dadospoltronas);
         return Redirect::route('home');
     }
@@ -33,8 +40,8 @@ class poltronaController extends Controller
 
         $dadospoltronas = $dadospoltronas->get();
         
-//ALTERAR ISSO
-        return view('gerenciadorFuncionario',['dadosfuncionario'=>$dadosfuncionarios]);
+//ALTERAR ISSO. (Feito).
+        return view('gerenciadorPoltrona',['dadospoltronas'=>$dadospoltronas]);
         
     }
 

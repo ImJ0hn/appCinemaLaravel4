@@ -29,6 +29,7 @@ class funcionarioController extends Controller
         return view('gerenciadorFuncionario',['dadosfuncionario']);
     }
  */                          
+
     public function MostrarGerenciadorFuncionario(Request $request){
         $dadosfuncionarios = Funcionario::all();
        // dd($dadosfuncionarios);

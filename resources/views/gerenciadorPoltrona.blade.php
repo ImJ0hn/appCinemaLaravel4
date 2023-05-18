@@ -17,8 +17,8 @@
   <thead>
     <tr>
       <th scope="col">Código</th>
-      <th scope="col">Número da poltrona</th>
       <th scope="col">Nome do cliente</th>
+      <th scope="col">Número da poltrona</th>
       <th scope="col">Alterar</th>
       <th scope="col">Excluir</th>
     </tr>
@@ -38,17 +38,17 @@
     <tr>
     
       <th scope="row">{{$dadospoltronas->id}}</th>
-      <td>{{$dadospoltronas->numpol}}</td>
       <td>{{$dadospoltronas->nomeclie}}</td>
+      <td>{{$dadospoltronas->numpol}}</td>
 
       <td>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterarFun-{{$dadospoltronas->id}}">Alterar</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlterarPol-{{$dadospoltronas->id}}">Alterar</button>
       @include('modal.poltronaAlterar')
       </td>
         
       <td>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteFun-{{$dadospoltronas->id}}">Excluir</button>
- 
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeletePol-{{$dadospoltronas->id}}">Excluir</button>
+        @include('modal.poltronaDeletar')
       </td>  
 
     </tr>

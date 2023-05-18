@@ -50,7 +50,7 @@ class poltronaController extends Controller
     public function ApagarPoltrona(Poltrona $registrosPoltronas){
         $registrosPoltronas->delete();
     
-           return Redirect::route('home');
+           return Redirect::route('gerenciar-poltrona');
         }
 
 

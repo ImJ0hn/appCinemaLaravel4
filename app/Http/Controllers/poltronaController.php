@@ -41,7 +41,7 @@ class poltronaController extends Controller
         $dadospoltronas = $dadospoltronas->get();
         
 //ALTERAR ISSO. (Feito).
-        return view('gerenciadorPoltrona',['dadospoltronas'=>$dadospoltronas]);
+        return view('gerenciadorPoltrona',['dadospoltrona'=>$dadospoltronas]);
         
     }
 
